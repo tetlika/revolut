@@ -1,4 +1,4 @@
-# Hello World API
+# Hello API
 
 This repository contains a simple "Hello World" application that can be deployed both locally and on AWS. By default, it is configured to use the local environment. 
 
