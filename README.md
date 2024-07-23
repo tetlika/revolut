@@ -1,76 +1,70 @@
-This code works for both local and AWS deployment. By default it is configured to use local environment.
+# Hello World API
 
-AWS diagram is here:
+This repository contains a simple "Hello World" application that can be deployed both locally and on AWS. By default, it is configured to use the local environment.
 
-https://github.com/tetlika/revolut/blob/main/diagram.png
+![AWS Architecture Diagram](https://github.com/tetlika/revolut/blob/main/diagram.png)
 
-To start using Run setup script:
+## Getting Started
 
-`./setup.sh`
+### Prerequisites
 
-Find container with name localstack, e.g.:
+- Docker
+- LocalStack
+- Terraform
+- AWS CLI
 
-`docker ps`
+### Setup
 
-`CONTAINER ID   IMAGE                   COMMAND                  CREATED          STATUS                    PORTS                                                                     NAMES
-7acd4d7e2e10   localstack/localstack   "docker-entrypoint.sh"   49 seconds ago   Up 48 seconds (healthy)   0.0.0.0:4566->4566/tcp, 4510-4559/tcp, 5678/tcp, 0.0.0.0:4571->4571/tcp   revolut-localstack-1`
+1. **Run the setup script:**
 
-Enter container, e.g.:
+    ```sh
+    ./setup.sh
+    ```
 
-`docker exec -it 7acd4d7e2e10 bash`
+2. **Find the LocalStack container:**
 
-Navigate to /opt/app:
+    ```sh
+    docker ps
+    ```
 
-`cd /opt/app`
+    Example output:
 
-and run deploy.sh script:
+    ```plaintext
+    CONTAINER ID   IMAGE                   COMMAND                  CREATED          STATUS                    PORTS                                                                     NAMES
+    7acd4d7e2e10   localstack/localstack   "docker-entrypoint.sh"   49 seconds ago   Up 48 seconds (healthy)   0.0.0.0:4566->4566/tcp, 4510-4559/tcp, 5678/tcp, 0.0.0.0:4571->4571/tcp   revolut-localstack-1
+    ```
 
-`./deploy.sh`
+3. **Enter the LocalStack container:**
 
-Type yes when doing terraform apply:
+    ```sh
+    docker exec -it 7acd4d7e2e10 bash
+    ```
 
-Enter a value: yes
+4. **Navigate to `/opt/app` and run the deploy script:**
 
-Example of terraform output:
+    ```sh
+    cd /opt/app
+    ./deploy.sh
+    ```
 
-`Outputs:
+5. **Type `yes` when prompted during `terraform apply`:**
+
+    ```plaintext
+    Enter a value: yes
+    ```
+
+### Example Terraform Output
+
+```plaintext
+Outputs:
 
 api_gateway_url = "https://el0a559qum.execute-api.us-west-2.amazonaws.com/dev"
-lambda_function_arn = "arn:aws:lambda:us-west-2:000000000000:function:hello-function"`
+lambda_function_arn = "arn:aws:lambda:us-west-2:000000000000:function:hello-function"
 
-Note this part of api_gateway_url in this example - el0a559qum ; it will be different for your setup. 
+### Testing
 
-In order to test:
-
-`export API_ID="el0a559qum"
-export ENDPOINT="http://localhost:4566/restapis/$API_ID/test/_user_request_/hello"`
-
-Run tests script:
-
-`python tests.py`
-
-In order to deploy changed lambda function in localhost - make changes to lambda_function.py and run deploy script again - it will redeploy lambda function with your changes.
-
-AWS deployment
-
-in order to deploy to aws change variable to aws, and run setup.sh on host on which docker is running
-enter localstack container and export AWS creds:
-
-export AWS_ACCESS_KEY_ID=AKIA...
-export AWS_SECRET_ACCESS_KEY="KQ1..."
-
-
-Example of terraform output when creating resources in AWS:
-
-api_gateway_url = "https://5a6mb1dhca.execute-api.us-west-2.amazonaws.com/dev"
-lambda_function_arn = "arn:aws:lambda:us-west-2:905418023427:function:hello-function"
-
-Example of request to AWS API:
-
-User creation:
-
-curl -X PUT "https://vetzzyrdoa.execute-api.us-west-2.amazonaws.com/dev/hello/johndoe"   -H "Content-Type: application/json"   -d '{"dateOfBirth": "1990-01-01"}'
-
-Getting user info:
-
-curl -X GET  "https://5a6mb1dhca.execute-api.us-west-2.amazonaws.com/dev/hello/johndoe"
+    ```export API_ID="el0a559qum"
+    export ENDPOINT="http://localhost:4566/restapis/$API_ID/test/_user_request_/hello"
+    python tests.py
+    ```
+### Redeploy Lambda Function Locally
