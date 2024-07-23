@@ -9,9 +9,9 @@ This repository contains a simple "Hello World" application that can be deployed
 ### Prerequisites
 
 - Docker
-- LocalStack
-- Terraform
-- AWS CLI
+- docker-compose
+
+Setup was tested on MacOS
 
 ### Setup
 
@@ -60,11 +60,14 @@ Outputs:
 
 api_gateway_url = "https://el0a559qum.execute-api.us-west-2.amazonaws.com/dev"
 lambda_function_arn = "arn:aws:lambda:us-west-2:000000000000:function:hello-function"
+```
 
-### Testing
+6. **Testing**
+
+    Use above output api_gateway_url to set API_ID:
 
     ```export API_ID="el0a559qum"
     export ENDPOINT="http://localhost:4566/restapis/$API_ID/test/_user_request_/hello"
     python tests.py
     ```
-### Redeploy Lambda Function Locally
+7. **Redeploy Lambda Function Locally**
