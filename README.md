@@ -55,12 +55,12 @@ Setup was tested on MacOS
 
 ### Example Terraform Output
 
-```plaintext
-Outputs:
+    ```plaintext
+    Outputs:
 
-api_gateway_url = "https://el0a559qum.execute-api.us-west-2.amazonaws.com/dev"
-lambda_function_arn = "arn:aws:lambda:us-west-2:000000000000:function:hello-function"
-```
+    api_gateway_url = "https://el0a559qum.execute-api.us-west-2.amazonaws.com/dev"
+    lambda_function_arn = "arn:aws:lambda:us-west-2:000000000000:function:hello-function"
+    ```
 
 6. **Testing**
 
