@@ -1,6 +1,8 @@
 # Hello World API
 
-This repository contains a simple "Hello World" application that can be deployed both locally and on AWS. By default, it is configured to use the local environment.
+This repository contains a simple "Hello World" application that can be deployed both locally and on AWS. By default, it is configured to use the local environment. On local environment localstack is used to mock DynamoDB, Lambda and API gateway functionality.
+
+Same code is used to deploy code to AWS and to local environment. To which environment deploy is regulated by variable https://github.com/tetlika/revolut/blob/main/vars.tf#L23, set it to AWS when deploying to AWS.
 
 ![AWS Architecture Diagram](https://github.com/tetlika/revolut/blob/main/diagram.png)
 
