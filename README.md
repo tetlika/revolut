@@ -1,4 +1,8 @@
-This code works for both local and aws deployment. By default it is configured to use local environment.
+This code works for both local and AWS deployment. By default it is configured to use local environment.
+
+AWS diagram is here:
+
+https://github.com/tetlika/revolut/blob/main/diagram.png
 
 To start using Run setup script:
 
