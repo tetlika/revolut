@@ -10,41 +10,39 @@ Find container with nam localstack, e.g.:
 CONTAINER ID   IMAGE                   COMMAND                  CREATED          STATUS                    PORTS                                                                     NAMES
 7acd4d7e2e10   localstack/localstack   "docker-entrypoint.sh"   49 seconds ago   Up 48 seconds (healthy)   0.0.0.0:4566->4566/tcp, 4510-4559/tcp, 5678/tcp, 0.0.0.0:4571->4571/tcp   revolut-localstack-1`
 
-
 Enter container, e.g.:
 
-docker exec -it 7acd4d7e2e10 bash
+`docker exec -it 7acd4d7e2e10 bash`
 
-navigate to /opt/app:
+Navigate to /opt/app:
 
-cd /opt/app
+`cd /opt/app`
 
 and run deploy.sh script:
 
-./deploy.sh
+`./deploy.sh`
 
-write yes when doing terraform apply:
+Type yes when doing terraform apply:
 
 Enter a value: yes
 
 Example of terraform output:
 
-Outputs:
+`Outputs:
 
 api_gateway_url = "https://el0a559qum.execute-api.us-west-2.amazonaws.com/dev"
-lambda_function_arn = "arn:aws:lambda:us-west-2:000000000000:function:hello-function"
+lambda_function_arn = "arn:aws:lambda:us-west-2:000000000000:function:hello-function"`
 
 Note this part of api_gateway_url in this example - el0a559qum ; it will be different for your setup. 
 
-
 In order to test:
 
-export API_ID="el0a559qum"
-export ENDPOINT="http://localhost:4566/restapis/$API_ID/test/_user_request_/hello"
+`export API_ID="el0a559qum"
+export ENDPOINT="http://localhost:4566/restapis/$API_ID/test/_user_request_/hello"`
 
 Run tests script:
 
-python tests.py
+`python tests.py`
 
 In order to deploy changed lambda function in localhost - make changes to lambda_function.py and run deploy script again - it will redeploy lambda function with your changes.
 
