@@ -1,12 +1,14 @@
-Run setup script:
+This code works for both local and aws deployment. By default it is configured to use local environment.
 
-./setup.sh
+To start using Run setup script:
+
+`./setup.sh`
 
 Find container with nam localstack, e.g.:
 
-docker ps
+`docker ps
 CONTAINER ID   IMAGE                   COMMAND                  CREATED          STATUS                    PORTS                                                                     NAMES
-7acd4d7e2e10   localstack/localstack   "docker-entrypoint.sh"   49 seconds ago   Up 48 seconds (healthy)   0.0.0.0:4566->4566/tcp, 4510-4559/tcp, 5678/tcp, 0.0.0.0:4571->4571/tcp   revolut-localstack-1
+7acd4d7e2e10   localstack/localstack   "docker-entrypoint.sh"   49 seconds ago   Up 48 seconds (healthy)   0.0.0.0:4566->4566/tcp, 4510-4559/tcp, 5678/tcp, 0.0.0.0:4571->4571/tcp   revolut-localstack-1`
 
 
 Enter container, e.g.:
