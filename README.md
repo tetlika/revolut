@@ -6,7 +6,7 @@ On local environment - "localstack" is used to mock DynamoDB, Lambda and API gat
 
 Main benefit of this setup, is that same terraform and application code is used to deploy code to AWS and to local environment. 
 
-To which environment deploy is regulated by variable https://github.com/tetlika/revolut/blob/main/vars.tf#L23, set it to AWS when deploying to AWS.
+To which environment deploy is regulated by variable https://github.com/tetlika/revolut/blob/main/vars.tf#L23, set it to aws when deploying to AWS.
 
 ![AWS Architecture Diagram](https://github.com/tetlika/revolut/blob/main/diagram.png)
 
