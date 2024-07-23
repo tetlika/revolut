@@ -8,9 +8,10 @@ To start using Run setup script:
 
 `./setup.sh`
 
-Find container with nam localstack, e.g.:
+Find container with name localstack, e.g.:
 
 `docker ps`
+
 `CONTAINER ID   IMAGE                   COMMAND                  CREATED          STATUS                    PORTS                                                                     NAMES
 7acd4d7e2e10   localstack/localstack   "docker-entrypoint.sh"   49 seconds ago   Up 48 seconds (healthy)   0.0.0.0:4566->4566/tcp, 4510-4559/tcp, 5678/tcp, 0.0.0.0:4571->4571/tcp   revolut-localstack-1`
 
