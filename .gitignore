@@ -1,0 +1,8 @@
+.pytest_cache
+__pycache__
+function.zip
+terraform.tfstate 
+terraform.tfstate.backup
+.terraform
+.terraform.lock.hcl
+LICENSE.txt

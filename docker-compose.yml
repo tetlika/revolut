@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  localstack:
+    image: localstack/localstack@sha256:ee387ea6044d2d05f460b3e0cb4125343cb262156f1ddcfe1bce25dd01b29a68
+    ports:
+      - "4566:4566"
+      - "4571:4571"
+    environment:
+      - SERVICES=lambda,dynamodb,apigateway
+      - DEBUG=1
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - IS_LOCAL=true
+    volumes:
+      - .:/opt/app
+      - /var/run/docker.sock:/var/run/docker.sock
+
