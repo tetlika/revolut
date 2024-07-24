@@ -83,11 +83,7 @@ Setup was tested on MacOS
 
    You need to follow same steps 1-7 in order to use this application on AWS, but before running deploy.sh you have to set variable environment to "aws" - https://github.com/tetlika/revolut/blob/main/vars.tf#L23.
    
-   Also, when inside container you need to set AWS credentials, like this:
-
-   ```export AWS_ACCESS_KEY_ID=AKIA...
-      export AWS_SECRET_ACCESS_KEY=KQ1...
-   ```
+   Also, when inside container you need to set AWS credentials as environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
 
    Example of terraform output when creating resources in AWS:
 
