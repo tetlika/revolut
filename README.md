@@ -71,7 +71,8 @@ Setup was tested on MacOS
 
     Use above output api_gateway_url to set API_ID:
 
-    ```export API_ID="el0a559qum"
+    ```sh
+    export API_ID="el0a559qum"
     export ENDPOINT="http://localhost:4566/restapis/$API_ID/test/_user_request_/hello"
     python tests.py
     ```
@@ -95,13 +96,13 @@ Setup was tested on MacOS
 
    Example of request to AWS API, user creation:
 
-   ```
+   ```sh
    curl -X PUT "https://vetzzyrdoa.execute-api.us-west-2.amazonaws.com/dev/hello/johndoe"   -H "Content-Type: application/json"   -d '{"dateOfBirth": "1990-01-01"}'
    ```
 
    Getting user info:
 
-   ```
+   ```sh
    curl -X GET  "https://5a6mb1dhca.execute-api.us-west-2.amazonaws.com/dev/hello/johndoe"
    ```
 
