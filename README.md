@@ -87,7 +87,7 @@ Setup was tested on MacOS
 
    ```export AWS_ACCESS_KEY_ID=AKIA...
       export AWS_SECRET_ACCESS_KEY="KQ1...
-    ```
+   ```
 
    Example of terraform output when creating resources in AWS:
 
