@@ -6,7 +6,7 @@ On local environment - localstack is used to emulate DynamoDB, Lambda and API ga
 
 Main benefit of this setup, is that same terraform and application code is used to deploy code to AWS and to local environment. 
 
-Due to maximized usage of serverless and managed services - this solution is very cost effective, and almost does not require operational efforts. 
+Due to usage of serverless and managed services - this solution is very cost effective, and almost does not require operational efforts. 
 
 DynamoDB, Lambda and API gateway services are used on AWS:
 
