@@ -86,7 +86,7 @@ Setup was tested on MacOS
    Also, when inside container you need to set AWS credentials, like this:
 
    ```export AWS_ACCESS_KEY_ID=AKIA...
-      export AWS_SECRET_ACCESS_KEY="KQ1..."
+      export AWS_SECRET_ACCESS_KEY=KQ1...
    ```
 
    Example of terraform output when creating resources in AWS:
