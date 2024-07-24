@@ -87,7 +87,9 @@ Setup was tested on MacOS
 
    Example of terraform output when creating resources in AWS:
 
-   ```api_gateway_url = "https://5a6mb1dhca.execute-api.us-west-2.amazonaws.com/dev"
+   ```Outputs:
+   
+      api_gateway_url = "https://5a6mb1dhca.execute-api.us-west-2.amazonaws.com/dev"
       lambda_function_arn = "arn:aws:lambda:us-west-2:905418023427:function:hello-function"
    ```
 
