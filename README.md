@@ -69,12 +69,13 @@ Setup was tested on MacOS
 
 6. **Testing:**
 
-    Use above output api_gateway_url to set API_ID:
+    Use above output api_gateway_url to set API_ID, please note that API_ID will be different in your setup:
 
     ```sh
     export API_ID="el0a559qum"
     export ENDPOINT="http://localhost:4566/restapis/$API_ID/test/_user_request_/hello"
     python tests.py
+    echo $?
     ```
 7. **Redeploy Lambda Function:**
 
@@ -106,3 +107,9 @@ Setup was tested on MacOS
    curl -X GET  "https://5a6mb1dhca.execute-api.us-west-2.amazonaws.com/dev/hello/johndoe"
    ```
 
+### TODO
+
+1. Better tfstate handling (dynamoDB for locking, s3 for storing state).
+2. Automation for picking up endpoint in local setup to pass for test script.
+3. Using custom domains in prod setup.
+3. UI for CI/CD (optional)
