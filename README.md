@@ -78,3 +78,27 @@ Setup was tested on MacOS
 7. **Redeploy Lambda Function:**
 
    While doing local development of lambda function - make changes to it and run deploy script once more - the changes will be picked up.
+
+8. **Deploying to AWS:**
+
+   You need to follow same steps 1-7 in order to use this application on AWS, but before running deploy.sh you have to set variable environment to "aws" - https://github.com/tetlika/revolut/blob/main/vars.tf#L23.
+   
+   Also, when inside container you need to set AWS credentials, like this:
+
+   ```export AWS_ACCESS_KEY_ID=AKIA...
+      export AWS_SECRET_ACCESS_KEY="KQ1..."```
+
+   
+   Example of terraform output when creating resources in AWS:
+
+   ```api_gateway_url = "https://5a6mb1dhca.execute-api.us-west-2.amazonaws.com/dev"
+      lambda_function_arn = "arn:aws:lambda:us-west-2:905418023427:function:hello-function"```
+
+   Example of request to AWS API, user creation:
+
+   ```curl -X PUT "https://vetzzyrdoa.execute-api.us-west-2.amazonaws.com/dev/hello/johndoe"   -H "Content-Type: application/json"   -d '{"dateOfBirth": "1990-01-01"}'```
+
+   Getting user info:
+
+   ```curl -X GET  "https://5a6mb1dhca.execute-api.us-west-2.amazonaws.com/dev/hello/johndoe"```
+
