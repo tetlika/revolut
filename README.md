@@ -2,11 +2,11 @@
 
 This repository contains a simple "Hello" application that can be deployed both locally and on AWS. By default, it is configured to use the local environment. 
 
-On local environment - "localstack" is used to mock DynamoDB, Lambda and API gateway functionality.
+On local environment - localstack is used to emulate DynamoDB, Lambda and API gateway functionality (see https://hub.docker.com/r/localstack/localstack).
 
 Main benefit of this setup, is that same terraform and application code is used to deploy code to AWS and to local environment. 
 
-To which environment deploy is regulated by variable https://github.com/tetlika/revolut/blob/main/vars.tf#L23, set it to aws when deploying to AWS.
+To which environment deploy is regulated by variable https://github.com/tetlika/revolut/blob/main/vars.tf#L23, this variable should be set to "aws" when deploying to AWS.
 
 ![AWS Architecture Diagram](https://github.com/tetlika/revolut/blob/main/diagram.png)
 
@@ -76,3 +76,5 @@ Setup was tested on MacOS
     python tests.py
     ```
 7. **Redeploy Lambda Function Locally**
+
+   While doing local development of lambda function - make changes to it and run deploy script once more - the changes will be picked up.
