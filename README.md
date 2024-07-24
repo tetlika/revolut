@@ -4,7 +4,7 @@ This repository contains a simple "Hello" application that can be deployed both 
 
 On local environment - localstack is used to emulate DynamoDB, Lambda and API gateway functionality (see https://hub.docker.com/r/localstack/localstack). Terraform is used to deploy code and infra on local and on AWS.
 
-Main benefit of this setup, is that same terraform and application code is used to deploy code to AWS and to local environment. 
+Main benefit of this setup from development standpoint, is that same terraform and application code is used to deploy code to AWS and to local environment. So when developing locally - same code will be used to deploy it as on production.
 
 Due to usage of serverless and managed services - this solution is very cost effective, and almost does not require operational efforts. 
 
