@@ -1,6 +1,6 @@
 # Hello API
 
-This repository contains a simple "Hello World" application that can be deployed both locally and on AWS. By default, it is configured to use the local environment. 
+This repository contains a simple "Hello" application that can be deployed both locally and on AWS. By default, it is configured to use the local environment. 
 
 On local environment - "localstack" is used to mock DynamoDB, Lambda and API gateway functionality.
 
