@@ -88,18 +88,20 @@ Setup was tested on MacOS
    Example of terraform output when creating resources in AWS:
 
    ```Outputs:
-   
+
       api_gateway_url = "https://5a6mb1dhca.execute-api.us-west-2.amazonaws.com/dev"
       lambda_function_arn = "arn:aws:lambda:us-west-2:905418023427:function:hello-function"
    ```
 
    Example of request to AWS API, user creation:
 
-   ```curl -X PUT "https://vetzzyrdoa.execute-api.us-west-2.amazonaws.com/dev/hello/johndoe"   -H "Content-Type: application/json"   -d '{"dateOfBirth": "1990-01-01"}'
+   ```
+   curl -X PUT "https://vetzzyrdoa.execute-api.us-west-2.amazonaws.com/dev/hello/johndoe"   -H "Content-Type: application/json"   -d '{"dateOfBirth": "1990-01-01"}'
    ```
 
    Getting user info:
 
-   ```curl -X GET  "https://5a6mb1dhca.execute-api.us-west-2.amazonaws.com/dev/hello/johndoe"
+   ```
+   curl -X GET  "https://5a6mb1dhca.execute-api.us-west-2.amazonaws.com/dev/hello/johndoe"
    ```
 
