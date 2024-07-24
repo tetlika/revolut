@@ -59,7 +59,7 @@ Setup was tested on MacOS
     Enter a value: yes
     ```
 
-### Example Terraform Output
+6. **Example local Terraform Output:**
 
     ```Outputs:
 
@@ -67,7 +67,7 @@ Setup was tested on MacOS
     lambda_function_arn = "arn:aws:lambda:us-west-2:000000000000:function:hello-function"
     ```
 
-6. **Testing**
+6. **Testing:**
 
     Use above output api_gateway_url to set API_ID:
 
@@ -75,6 +75,6 @@ Setup was tested on MacOS
     export ENDPOINT="http://localhost:4566/restapis/$API_ID/test/_user_request_/hello"
     python tests.py
     ```
-7. **Redeploy Lambda Function Locally**
+7. **Redeploy Lambda Function:**
 
    While doing local development of lambda function - make changes to it and run deploy script once more - the changes will be picked up.
